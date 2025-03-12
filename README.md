@@ -27,7 +27,7 @@ To run this script, you have 2 options:
 bash run-omp.sh [-s | -w] [Config file; Default "omp-strong.cfg" if -s, "omp-weak.cfg" if -w]
 ```
 
-    or
+or
 
 ```
 bash run-omp.sh [N1,N2,...] [K1,K2,...] [T1,T2,...; Default 4] [[[-s | -w] [NREPS; Default 5]] | empty]
@@ -55,7 +55,7 @@ To run this script, you have 2 options:
 bash run-omp.sh [Config file]
 ```
 
-    or
+or
 
 ```
 bash run-omp.sh [N1,N2,...] [K1,K2,...] [NREPS; Default 5]
