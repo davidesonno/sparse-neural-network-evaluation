@@ -1,6 +1,6 @@
 # Sparse Feed Forward Neural Network
 
-This project contains two bash scripts, `run-omp.sh` and `run-cuda.sh`, which can be used to execute OpenMP and CUDA implementations for the computation of the eural networks.
+This project contains two bash scripts, `run-omp.sh` and `run-cuda.sh`, which can be used to execute OpenMP and CUDA implementations for the computation of the neural networks.
 
 ## General informations
 
