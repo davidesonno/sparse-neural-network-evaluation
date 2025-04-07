@@ -17,7 +17,7 @@ In both approaches, launching the executions is very similar. There are two alte
 1. Launch the scripts with a configuration file
 2. Launch the scripts with arbitrary command line arguments.
 
-Another script that can be used to compare the two approeaches cn be used: `run-comparison.sh`. Input sizes are set inside the file.
+Another script can be used to compare the two approeaches: `run-comparison.sh`. Input sizes are set inside the file.
 
 ### Executing OpenMP: run-omp.sh
 

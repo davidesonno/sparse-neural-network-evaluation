@@ -44,4 +44,4 @@ fi
 
 # == Submit job ==
 echo "Args: $ARGS"
-sbatch -job-name=$OUT_NAME -p "$PARTITION" -o "$OUT" "$PROGRAM.sh" $ARGS
+sbatch --job-name=$OUT_NAME -p "$PARTITION" -o "$OUT" "$PROGRAM.sh" $ARGS
