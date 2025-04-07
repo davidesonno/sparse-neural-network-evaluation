@@ -39,16 +39,25 @@ float sigmoid( float x ){
 }
 
 // === parameter parsing ===
-int parse_list( const char *arg, int *arr, int max_size ){
+int parse_list(const char *arg, int *arr, int max_size) {
     int count = 0;
-    char *token, *copy = strdup(arg);
+    char *token;
+    
+    // Allocate memory for a copy of arg
+    size_t len = strlen(arg) + 1;
+    char *copy = (char *)malloc(len);
+    if (copy == NULL) {
+        return 0; // Allocation failed
+    }
+    strcpy(copy, arg);
+
     token = strtok(copy, ",");
 
-    while (token != NULL && count < max_size){
+    while (token != NULL && count < max_size) {
         arr[count++] = atoi(token);
         token = strtok(NULL, ",");
     }
-    
+
     free(copy);
     return count;
 }

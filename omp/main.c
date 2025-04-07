@@ -1,10 +1,14 @@
-/**
- * - Compile the program with:
- *      gcc -o [program] -std=c99 -Wall -Wpedantic -fopenmp main.c src/*.c -lm
- * - Run the program with:
- *      [program] [N1,N2,...,Nn] [K1,K2,...,Kj] [T1,T2,...,Tk; Default 4] [[[-s | -w] [NREPS; Default 5]] | empty; Default empty]
- * if not -s nor -w: N and K must be a single integer.
- */
+//
+// - Compile the program with:
+//
+//      gcc -o [program] -std=c99 -Wall -Wpedantic -fopenmp main.c src/*.c -lm
+//
+// - Run the program with:
+//
+//      [program] [N1,N2,...,Nn] [K1,K2,...,Kj] [T1,T2,...,Tk; Default 4] [[[-s | -w] [NREPS; Default 5]] | empty; Default empty]
+//
+// if not -s nor -w: N and K must be a single integer.
+//
 
 #include "../hpc.h" // comment if not available
 #include "src/network.h"

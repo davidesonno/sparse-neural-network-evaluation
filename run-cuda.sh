@@ -6,7 +6,9 @@
 OUT_NAME="cuda-single"
 # == Argument parsing ==
 if [ $# -eq 0 ]; then
-    echo "Error: No arguments provided."
+    echo "   To run this script, you have 2 options:"
+    echo "   - bash run-omp.sh [N1,N2,...] [K1,K2,...] [NREPS; Default 5]"
+    echo "   - bash run-omp.sh [Config file]"
     exit 1
 elif [ $# -eq 1 ]; then
     CONFIG_FILE="$1"
@@ -21,12 +23,12 @@ else
     exit 1
 fi
 
-# == Convert cfg arrays to space-separated lists ==
+# == Convert cfg arrays to comma-separated lists ==
 ARGS="$(IFS=,; echo "${N[*]}") $(IFS=,; echo "${K[*]}") $NREPS"
 export ARGS
 
 PROGRAM="cuda/cuda-program"
-PARTITION="rtx2080"
+PARTITION="l40"
 OUT_FOLDER="out-$PARTITION"
 OUT="$OUT_FOLDER/$OUT_NAME.out"
 
@@ -42,4 +44,4 @@ fi
 
 # == Submit job ==
 echo "Args: $ARGS"
-sbatch -J "$OUT_NAME" -p "$PARTITION" -o "$OUT" "$PROGRAM.sh" $ARGS
+sbatch -job-name=$OUT_NAME -p "$PARTITION" -o "$OUT" "$PROGRAM.sh" $ARGS

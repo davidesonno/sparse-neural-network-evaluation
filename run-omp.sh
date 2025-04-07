@@ -5,7 +5,6 @@
 # If -s or -w, performs the Strong or Weak scaling efficiency, else it simply displays the elapsed time.
 
 # == Argument parsing ==
-# automatically link -s to the strong configuration and -w to the weak configuration
 if [[ "$1" == "-s" ]] ||  [[ "$1" == "-w" ]]; then
     if [[ "$1" == "-s" ]]; then
         TYPE="strong"
@@ -33,13 +32,6 @@ EXE="omp/omp-program"
 DEPENDENCIES="omp/src/*.c"
 JOB_NAME="omp-$TYPE"
 PARTITION="l40"
-if [ "$PARTITION" == "l40" ]; then
-    CPUS=8
-elif [ "$PARTITION" == "rtx2080" ]; then
-    CPUS=4
-else 
-    CPUS=1
-fi
 OUT_FOLDER="out-$PARTITION"
 OUT="$OUT_FOLDER/omp-$TYPE-unroll.out"
 
@@ -60,4 +52,4 @@ fi
 
 # == Submit job ==
 echo "Args: $ARGS"
-sbatch -J $JOB_NAME -p $PARTITION -c $CPUS -o $OUT $EXE.sh $ARGS
+sbatch --job-name=$JOB_NAME -p $PARTITION -o $OUT $EXE.sh $ARGS

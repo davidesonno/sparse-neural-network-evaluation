@@ -2,6 +2,8 @@
 #define UTILS_H
 
 #include <stdbool.h>
+#include <time.h>
+
 
 // if hpc.h is not available/not used by the main.cu
 #ifndef HPC_H
